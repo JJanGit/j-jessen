@@ -1,0 +1,13 @@
+/* spacing for the generated legal text, colors and fonts come from bootstrap */
+h2 {
+    margin-top: 2.5rem;
+}
+
+li {
+    margin-bottom: 0.4rem;
+}
+
+.seal {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}

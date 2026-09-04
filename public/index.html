@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JJ Portfolio</title>
+        <link rel="icon" href="/res/favicon.svg">
+        <!-- theme - no defer, must run before first paint to avoid a white flash -->
+        <script src="/js/theme.js"></script>
+        <!-- CSS - vendor css first, so own overrides win -->
+        <link rel="stylesheet" href="/vendor/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-overrides.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <!-- JS - strict order -->
+        <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+        <script src="/vendor/anime/anime.umd.min.js" defer></script>
+        <script src="/js/main.js" defer></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand bg-body-tertiary border-bottom">
+            <div class="container">
+                <a class="navbar-brand fw-semibold" href="/">j-jessen.de</a>
+                <div class="d-flex align-items-center gap-3">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#projekte">Projekte</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+                    </ul>
+                    <!-- @TODO insert icon -->
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="theme-toggle" aria-label="Theme wechseln">Theme</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container py-5">
+            <!-- showcase only, gets replaced by real content -->
+            <section id="hero" class="py-5">
+                <p class="text-body-secondary mb-2 reveal">Hello World!</p>
+                <h1 class="display-5 fw-semibold mb-3 reveal">Webentwickler in Ausbildung,<br>Portfolio in Arbeit!</h1>
+                <p class="lead text-body-secondary mb-4 reveal">Hier soll ein Portfolio entstehen welches, meine bisherigen und zukünftigen Projekte zeigt.</p>
+                <div class="d-flex gap-2 reveal">
+                    <a class="btn btn-primary" href="#projekte">Projekte ansehen</a>
+                    <a class="btn btn-outline-primary" href="#kontakt">Kontakt</a>
+                </div>
+            </section>
+
+            <section class="py-5 border-top">
+                <h2 class="h4 mb-4">Typografie</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h1>Überschrift 1</h1>
+                        <h2>Überschrift 2</h2>
+                        <h3>Überschrift 3</h3>
+                        <h4>Überschrift 4</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Fließtext in Body-Farbe mit einem <a href="#">Link</a> und <code>inline code</code>. Zeilenhöhe ist 1.6, damit längere Absätze angenehm lesbar bleiben.</p>
+                        <p class="text-body-secondary">Sekundärer Text für Beschreibungen, Meta-Angaben und alles, was nicht im Vordergrund stehen soll.</p>
+                        <p class="text-body-tertiary small mb-0">Tertiärer Text für Fußnoten und Zeitstempel.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 border-top">
+                <h2 class="h4 mb-4">Farben</h2>
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <div class="colorbox rounded bg-primary"></div>
+                        <p class="small mb-0 mt-2">Primary</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="colorbox rounded border bg-body"></div>
+                        <p class="small mb-0 mt-2">Body</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="colorbox rounded border bg-body-tertiary"></div>
+                        <p class="small mb-0 mt-2">Tertiary (Cards)</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="colorbox rounded border bg-body-secondary"></div>
+                        <p class="small mb-0 mt-2">Secondary (Hover)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projekte" class="py-5 border-top">
+                <h2 class="h4 mb-4">Komponenten</h2>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-4 reveal">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <span class="badge text-bg-primary mb-2">Web</span>
+                                <h3 class="h5 card-title">Portfolio</h3>
+                                <p class="card-text text-body-secondary">Diese Seite. Statisch, ohne Build-Step, auf Cloudflare.</p>
+                                <a href="#" class="card-link">Mehr dazu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <span class="badge text-bg-secondary mb-2">Tool</span>
+                                <h3 class="h5 card-title">Projekt zwei</h3>
+                                <p class="card-text text-body-secondary">Platzhalter für ein weiteres Projekt mit kurzer Beschreibung.</p>
+                                <a href="#" class="card-link">Mehr dazu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <span class="badge text-bg-secondary mb-2">Experiment</span>
+                                <h3 class="h5 card-title">Projekt drei</h3>
+                                <p class="card-text text-body-secondary">Platzhalter für ein weiteres Projekt mit kurzer Beschreibung.</p>
+                                <a href="#" class="card-link">Mehr dazu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <button type="button" class="btn btn-primary">Primary</button>
+                    <button type="button" class="btn btn-outline-primary">Outline</button>
+                    <button type="button" class="btn btn-secondary">Secondary</button>
+                    <button type="button" class="btn btn-link">Link</button>
+                    <button type="button" class="btn btn-primary" disabled>Disabled</button>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="demo-input" class="form-label">Textfeld</label>
+                        <input type="text" class="form-control" id="demo-input" placeholder="Platzhalter">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="demo-select" class="form-label">Auswahl</label>
+                        <select class="form-select" id="demo-select">
+                            <option selected>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="demo-check" checked>
+                            <label class="form-check-label" for="demo-check">Checkbox</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="kontakt" class="border-top py-4">
+            <div class="container d-flex flex-wrap justify-content-between gap-2 small text-body-secondary">
+                <a href="mailto:kontakt@j-jessen.de">kontakt@j-jessen.de</a>
+                <a href="/datenschutz.html">Datenschutzerklärung</a>
+            </div>
+        </footer>
+    </body>
+</html>

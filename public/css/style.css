@@ -1,0 +1,20 @@
+.colorbox {
+    height: 4rem;
+}
+
+/* hidden until anime.js reveals it, only when js runs */
+.js .reveal {
+    opacity: 0;
+}
+
+/* card hover, css because anime.js would fight the reveal transform */
+@media (prefers-reduced-motion: no-preference) {
+    .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--bs-box-shadow);
+    }
+}
