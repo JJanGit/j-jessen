@@ -34,20 +34,23 @@ themeToggle.addEventListener("click", () => {
 });
 
 // ---------- reveal ----------
-const projects = document.getElementById("projekte");
-
 if (reducedMotion) {
     root.classList.remove("js");
-} else {
+}
+else {
     reveal("#hero .reveal");
 
-    // cards wait until they scroll into view, only on pages that have them
-    if (projects) {
-        const observer = new IntersectionObserver((entries) => {
-            if (!entries[0].isIntersecting) return;
-            reveal("#projekte .reveal");
-            observer.disconnect();
-        }, { threshold: 0.2 });
-        observer.observe(projects);
-    }
+    // every other section waits until it scrolls into view, then stops being watched
+    const observer = new IntersectionObserver((entries, self) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            reveal(entry.target.querySelectorAll(".reveal"));
+            self.unobserve(entry.target);
+        });
+    }, {
+      threshold: 0.2
+    });
+
+    // ":has" keeps sections without anything to reveal out of the observer
+    document.querySelectorAll("section:not(#hero):has(.reveal)").forEach((section) => observer.observe(section));
 }

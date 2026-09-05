@@ -21,11 +21,7 @@
     --bs-border-radius-lg: 0.75rem;
 }
 
-/*
-    --------------------------------------------------------------------------
-    light theme (default)
-    --------------------------------------------------------------------------
-*/
+/* ---------- light theme (default) ---------- */
 :root,
 [data-bs-theme="light"] {
     color-scheme: light;
@@ -63,11 +59,7 @@
     --bs-code-color: #b03a8a;
 }
 
-/*
-    --------------------------------------------------------------------------
-    dark theme
-    --------------------------------------------------------------------------
-*/
+/* ---------- dark theme ---------- */
 [data-bs-theme="dark"] {
     color-scheme: dark;
 
@@ -143,4 +135,27 @@
 .card {
     --bs-card-bg: var(--bs-tertiary-bg);
     --bs-card-border-color: var(--bs-border-color);
+}
+
+/* filled at rest, hover and active share one shade darker */
+#theme-toggle {
+    --bs-btn-color: var(--bs-secondary-color);
+    --bs-btn-bg: var(--bs-secondary-bg);
+    --bs-btn-hover-color: var(--bs-body-color);
+    --bs-btn-hover-bg: var(--bs-border-color);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: var(--bs-btn-hover-bg);
+    /* both are unset on base ".btn", they fall back to a dark ring on click and no focus ring */
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: var(--bs-secondary-color-rgb);
+}
+
+#theme-toggle .bi-sun {
+    display: none;
+}
+[data-bs-theme="dark"] #theme-toggle .bi-sun {
+    display: inline;
+}
+[data-bs-theme="dark"] #theme-toggle .bi-moon {
+    display: none;
 }
