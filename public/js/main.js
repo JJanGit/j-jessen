@@ -2,6 +2,8 @@ const root = document.documentElement;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches; // respect users choice... I guess
 
 // ---------- animations ----------
+
+// fade in
 const reveal = (targets) => {
     anime.animate(targets, {
         opacity: [0, 1],
@@ -12,9 +14,32 @@ const reveal = (targets) => {
     });
 };
 
+// stack logos slide in sideways
+const slideIn = (targets) => {
+    anime.animate(targets, {
+        opacity: [0, 1],
+        x: [-16, 0],
+        duration: 500, // slightly faster than reveal looks better
+        delay: anime.stagger(45),
+        ease: "outCubic"
+    });
+};
+
+const animateSection = (section) => {
+    if (section.id === "stack") {
+        // stagger per row, so both rows start at the same time
+        section.querySelectorAll(".logo-row").forEach((row) => {
+            slideIn(row.querySelectorAll(".reveal"));
+        });
+    }
+    else {
+        reveal(section.querySelectorAll(".reveal"));
+    }
+};
+
+
 // ---------- theme ----------
 const themeToggle = document.getElementById("theme-toggle");
-
 themeToggle.addEventListener("click", () => {
     const next = root.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
     root.setAttribute("data-bs-theme", next);
@@ -33,6 +58,7 @@ themeToggle.addEventListener("click", () => {
     }
 });
 
+
 // ---------- reveal ----------
 if (reducedMotion) {
     root.classList.remove("js");
@@ -43,8 +69,10 @@ else {
     // every other section waits until it scrolls into view, then stops being watched
     const observer = new IntersectionObserver((entries, self) => {
         entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            reveal(entry.target.querySelectorAll(".reveal"));
+          if (!entry.isIntersecting) {
+            return;
+          }
+            animateSection(entry.target);
             self.unobserve(entry.target);
         });
     }, {

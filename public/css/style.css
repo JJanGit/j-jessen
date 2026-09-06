@@ -46,6 +46,21 @@
     width: 2.5rem;
     height: 2.5rem;
 }
+/* first logo of a new category, adds to the row gap */
+.logo-break {
+    position: relative;
+    margin-left: 1.5rem;
+}
+/* divider sits in the middle of that gap, half its offset is the row gap */
+.logo-break::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    height: 2.5rem;
+    border-left: 1px solid var(--bs-border-color);
+    transform: translateY(-50%);
+}
 
 /* brand colors on hover */
 .logo-html { --logo-color: #e34f26; }

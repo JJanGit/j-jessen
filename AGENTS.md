@@ -35,12 +35,20 @@ j-jessen/
 │ ├── js/
 │ │ ├── theme.js <- setzt data-bs-theme vor dem ersten Paint, ohne defer
 │ │ └── main.js
+│ ├── res/
+│ │ └── favicon.svg
 │ └── vendor/ <- heruntergeladene Libraries, nicht anfassen
 │   ├── bootstrap/
+│   │ ├── bootstrap.min.css
+│   │ └── bootstrap.bundle.min.js
 │   └── anime/
+│     └── anime.umd.min.js
+├── logos/ <- Quell-SVGs der Stack-Section, im HTML inline eingebettet
 ├── wrangler.jsonc
 ├── package.json
+├── package-lock.json
 ├── .npmrc
+├── .gitattributes
 └── .gitignore
 
 
