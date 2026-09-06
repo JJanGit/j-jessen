@@ -1,6 +1,12 @@
 const root = document.documentElement;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches; // respect users choice... I guess
 
+// this file made it, so theme.js does not have to unhide anything on its own
+clearTimeout(window.revealFailsafe);
+
+// anime.js is what brings ".reveal" back, without it nothing may stay hidden
+const animated = !reducedMotion && typeof anime !== "undefined";
+
 // ---------- animations ----------
 
 // fade in
@@ -48,7 +54,7 @@ themeToggle.addEventListener("click", () => {
   }
   catch { } // somehow a empty catch is allowed
 
-    if (!reducedMotion) {
+    if (animated) {
         anime.animate(themeToggle, {
             scale: [0.85, 1],
             duration: 300,
@@ -60,7 +66,7 @@ themeToggle.addEventListener("click", () => {
 
 
 // ---------- reveal ----------
-if (reducedMotion) {
+if (!animated) {
     root.classList.remove("js");
 }
 else {

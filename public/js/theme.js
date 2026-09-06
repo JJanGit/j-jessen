@@ -27,4 +27,9 @@
 
     // marks that js is running, css hides ".reveal" elements only then
     document.documentElement.classList.add("js");
+
+    // failsafe, main.js clears this. without it a blocked or missing script leaves half the page invisible
+    window.revealFailsafe = window.setTimeout(() => {
+        document.documentElement.classList.remove("js");
+    }, 2000);
 })();

@@ -3,8 +3,22 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>JJ Portfolio</title>
+        <title>JJs Portfolio</title>
+        <meta name="description" content="JJs Portfolio-Webseite, Azubi zum Fachinformatiker für Anwendungsentwicklung. Mit Projekten in HTML, CSS, JavaScript und Object Pascal.">
+        <link rel="canonical" href="https://j-jessen.de/">
         <link rel="icon" href="/res/favicon.svg">
+        <link rel="apple-touch-icon" href="/res/apple-touch-icon.png">
+        <!-- open graph - link preview in chats and on social sites, urls must be absolute -->
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="de_DE">
+        <meta property="og:url" content="https://j-jessen.de/">
+        <meta property="og:title" content="JJs Portfolio">
+        <meta property="og:description" content="Azubi zum Fachinformatiker für Anwendungsentwicklung. Projekte in HTML, CSS, JavaScript und Object Pascal.">
+        <meta property="og:image" content="https://j-jessen.de/res/og.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="JJs Portfolio, Azubi zum Fachinformatiker für Anwendungsentwicklung">
+        <meta name="twitter:card" content="summary_large_image">
         <!-- theme - no defer, must run before first paint to dodge a flashbang -->
         <script src="/js/theme.js"></script>
         <!-- CSS - vendor css first, so own overrides win -->
@@ -22,7 +36,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-3 py-0 fw-semibold" href="/">
                     <img src="/res/favicon.svg" width="32" height="32" alt="">
-                    j-jessen.de
+                    <span class="navbar-brand-text">j-jessen.de</span>
                 </a>
                 <div class="d-flex align-items-center gap-3">
                     <ul class="navbar-nav">
@@ -42,7 +56,7 @@
             <!-- HEADER -->
             <section id="hero" class="py-5">
                 <h1 class="display-5 fw-semibold mb-3 reveal">JJs<br>Portfolio</h1>
-                <p class="lead text-body-secondary mb-4 reveal">Hallo Welt, Portfolio in Arbeit!</p>
+                <p class="lead text-body-secondary mb-4 reveal">Azubi zum Fachinformatiker für Anwendungsentwicklung.</p>
                 <div class="d-flex align-items-center gap-3 reveal">
                     <a class="btn btn-primary" href="#projekte">Direkt zu den Projekten</a>
                     <a class="btn btn-outline-primary" href="#kontakt">Kontakt</a>
@@ -55,7 +69,7 @@
             <!-- ABOUT ME -->
             <section id="about" class="py-5 border-top">
                 <h2 class="h4 mb-4">Über mich</h2>
-                <p class="lead text-body-secondary mb-4 reveal">Ich mache eine Ausbildung zum Fachinformatiker für Anwendungsentwicklung.</p>
+                <p class="lead text-body-secondary mb-4 reveal">Ich mache eine Ausbildung zum Fachinformatiker für Anwendungsentwicklung und befinde mich im 2. Ausbildungsjahr.</p>
                 <p class="text-body-secondary mb-3 reveal">Als Arbeitsumgebung nutze ich Linux (Debian und Fedora) und Windows. Unter Linux bin ich viel im Terminal unterwegs, von der Paketverwaltung über Konfigurationsdateien bis zur Fehlersuche in den Logs.</p>
                 <p class="text-body-secondary mb-3 reveal">Ich setze mich gerne mit modernen wie auch älteren Technologien auseinander. Diese Seite kommt zum Beispiel ohne Build-Step aus, nur HTML, CSS und etwas JavaScript mit klassischen Libraries wie Bootstrap.</p>
                 <p class="text-body-secondary mb-0 reveal">Neben der Webentwicklung schreibe ich auch native Desktop-Anwendungen in Object Pascal.</p>
@@ -153,7 +167,7 @@
                                     <span class="badge text-bg-wip">In Arbeit</span>
                                 </div>
                                 <h3 class="h5 card-title">Quizmon</h3>
-                                <p class="card-text text-body-secondary">Ein Pokemon-Ratespiel mit unterschielichen Spielmodi.</p>
+                                <p class="card-text text-body-secondary">Ein Pokemon-Ratespiel mit unterschiedlichen Spielmodi.</p>
                                 <a href="https://github.com/JJanGit/Quizmon" class="card-link">Mehr dazu</a>
                             </div>
                         </div>
@@ -167,9 +181,9 @@
             <div class="container d-flex flex-wrap justify-content-between gap-2 small text-body-secondary">
                 <a href="mailto:kontakt@j-jessen.de">kontakt@j-jessen.de</a>
                 <span>
-                    Gebaut mit <a href="https://getbootstrap.com/" rel="noopener">Bootstrap</a>,
-                    <a href="https://icons.getbootstrap.com/" rel="noopener">Bootstrap Icons</a>
-                    und <a href="https://animejs.com/" rel="noopener">anime.js</a>.
+                    Gebaut mit <a href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a>,
+                    <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener">Bootstrap Icons</a>
+                    und <a href="https://animejs.com/" target="_blank" rel="noopener">anime.js</a>.
                 </span>
                 <a href="/datenschutz.html">Datenschutzerklärung</a>
             </div>

@@ -3,7 +3,9 @@
   "name": "j-jessen-de",
   "compatibility_date": "2026-08-27",
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    // serves "public/404.html" for unknown paths, default would be a blank cloudflare error
+    "not_found_handling": "404-page"
   },
   "routes": [
     { "pattern": "j-jessen.de", "custom_domain": true }

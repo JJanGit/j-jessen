@@ -149,6 +149,13 @@
     --bs-card-border-color: var(--bs-border-color);
 }
 
+/* hide text in navbar on small screens */
+@media (max-width: 400px) {
+    .navbar-brand-text {
+        display: none;
+    }
+}
+
 /* filled at rest, hover and active share one shade darker */
 #theme-toggle {
     --bs-btn-color: var(--bs-secondary-color);
