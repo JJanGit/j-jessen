@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>JJ Portfolio</title>
         <link rel="icon" href="/res/favicon.svg">
-        <!-- theme - no defer, must run before first paint to avoid a white flash -->
+        <!-- theme - no defer, must run before first paint to dodge a flashbang -->
         <script src="/js/theme.js"></script>
         <!-- CSS - vendor css first, so own overrides win -->
         <link rel="stylesheet" href="/vendor/bootstrap/bootstrap.min.css">
@@ -20,7 +20,10 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand bg-body-tertiary border-bottom">
             <div class="container">
-                <a class="navbar-brand fw-semibold" href="/">j-jessen.de</a>
+                <a class="navbar-brand d-flex align-items-center gap-3 py-0 fw-semibold" href="/">
+                    <img src="/res/favicon.svg" width="32" height="32" alt="">
+                    j-jessen.de
+                </a>
                 <div class="d-flex align-items-center gap-3">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="#projekte">Projekte</a></li>
@@ -37,13 +40,15 @@
 
         <main class="container py-3">
             <!-- HEADER -->
-            <!-- showcase only, gets replaced by real content -->
             <section id="hero" class="py-5">
                 <h1 class="display-5 fw-semibold mb-3 reveal">JJs<br>Portfolio</h1>
                 <p class="lead text-body-secondary mb-4 reveal">Hallo Welt, Portfolio in Arbeit!</p>
-                <div class="d-flex gap-2 reveal">
+                <div class="d-flex align-items-center gap-3 reveal">
                     <a class="btn btn-primary" href="#projekte">Direkt zu den Projekten</a>
                     <a class="btn btn-outline-primary" href="#kontakt">Kontakt</a>
+                    <a class="logo logo-github" href="https://github.com/JJanGit" target="_blank" rel="noopener" aria-label="GitHub Profil">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
                 </div>
             </section>
 
@@ -102,6 +107,14 @@
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0L1.605 6v12L12 24l10.395-6V6zm0 1.41l9.172 5.295v10.59L12 22.59l-9.172-5.295V6.705zM5.902 8.334c-1.306 0-1.983.956-2.574 2.41v6.262L12 22.014l8.672-5.008v-5.971c-.447-.264-.894-.412-1.336-.412-4.275 0-3.97 4.885-6.717 5.8-2.748.917-3.511-8.089-6.717-8.089zm12.364.457c-2.9 0-2.137 4.732-5.342 4.732-1.63 0-2.52-1.317-3.477-1.981.148.326.3.655.442.98.467 1.068.922 2.09 1.379 2.734.228.322.455.541.644.644a.595.595 0 0 0 .549.05c.558-.187.968-.571 1.36-1.112.39-.541.74-1.228 1.154-1.916.413-.688.894-1.385 1.59-1.918.695-.534 1.607-.881 2.77-.881.465 0 .908.136 1.337.352v-.121c-.633-.849-1.348-1.563-2.406-1.563zm-6.68.152c-.868 0-1.491.82-2.076 2.06.094.055.192.106.277.167 1.06.761 1.798 1.853 3.137 1.853.678 0 1.067-.218 1.418-.585-.722-1.546-1.432-3.492-2.756-3.495Z"/></svg>
                         <span>Chart.js</span>
                     </li>
+                    <li class="logo logo-sqlite logo-break reveal">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.678.521c-1.032-.92-2.28-.55-3.513.544a8.71 8.71 0 0 0-.547.535c-2.109 2.237-4.066 6.38-4.674 9.544.237.48.422 1.093.544 1.561a13.044 13.044 0 0 1 .164.703s-.019-.071-.096-.296l-.05-.146a1.689 1.689 0 0 0-.033-.08c-.138-.32-.518-.995-.686-1.289-.143.423-.27.818-.376 1.176.484.884.778 2.4.778 2.4s-.025-.099-.147-.442c-.107-.303-.644-1.244-.772-1.464-.217.804-.304 1.346-.226 1.478.152.256.296.698.422 1.186.286 1.1.485 2.44.485 2.44l.017.224a22.41 22.41 0 0 0 .056 2.748c.095 1.146.273 2.13.5 2.657l.155-.084c-.334-1.038-.47-2.399-.41-3.967.09-2.398.642-5.29 1.661-8.304 1.723-4.55 4.113-8.201 6.3-9.945-1.993 1.8-4.692 7.63-5.5 9.788-.904 2.416-1.545 4.684-1.931 6.857.666-2.037 2.821-2.912 2.821-2.912s1.057-1.304 2.292-3.166c-.74.169-1.955.458-2.362.629-.6.251-.762.337-.762.337s1.945-1.184 3.613-1.72C21.695 7.9 24.195 2.767 21.678.521m-18.573.543A1.842 1.842 0 0 0 1.27 2.9v16.608a1.84 1.84 0 0 0 1.835 1.834h9.418a22.953 22.953 0 0 1-.052-2.707c-.006-.062-.011-.141-.016-.2a27.01 27.01 0 0 0-.473-2.378c-.121-.47-.275-.898-.369-1.057-.116-.197-.098-.31-.097-.432 0-.12.015-.245.037-.386a9.98 9.98 0 0 1 .234-1.045l.217-.028c-.017-.035-.014-.065-.031-.097l-.041-.381a32.8 32.8 0 0 1 .382-1.194l.2-.019c-.008-.016-.01-.038-.018-.053l-.043-.316c.63-3.28 2.587-7.443 4.8-9.791.066-.069.133-.128.198-.194Z"/></svg>
+                        <span>SQLite</span>
+                    </li>
+                    <li class="logo logo-git logo-break reveal">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></svg>
+                        <span>Git</span>
+                    </li>
                 </ul>
             </section>
 
@@ -114,7 +127,17 @@
                             <div class="card-body">
                                 <span class="badge text-bg-primary mb-2">Web</span>
                                 <h3 class="h5 card-title">Portfolio</h3>
-                                <p class="card-text text-body-secondary">Diese Seite. Statisch, ohne Build-Step, auf Cloudflare.</p>
+                                <p class="card-text text-body-secondary">Diese Seite. Statisch, ohne Build-Step, gehostet auf Cloudflare.</p>
+                                <a href="#" class="card-link">Mehr dazu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <span class="badge text-bg-primary mb-2">Web</span>
+                                <h3 class="h5 card-title">Quizmon</h3>
+                                <p class="card-text text-body-secondary">Ein Pokemon-Ratespiel.</p>
                                 <a href="#" class="card-link">Mehr dazu</a>
                             </div>
                         </div>
@@ -123,48 +146,10 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <span class="badge text-bg-secondary mb-2">Tool</span>
-                                <h3 class="h5 card-title">Projekt zwei</h3>
-                                <p class="card-text text-body-secondary">Platzhalter für ein weiteres Projekt mit kurzer Beschreibung.</p>
-                                <a href="#" class="card-link">Mehr dazu</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 reveal">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <span class="badge text-bg-secondary mb-2">Experiment</span>
                                 <h3 class="h5 card-title">Projekt drei</h3>
                                 <p class="card-text text-body-secondary">Platzhalter für ein weiteres Projekt mit kurzer Beschreibung.</p>
                                 <a href="#" class="card-link">Mehr dazu</a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                    <button type="button" class="btn btn-primary">Primary</button>
-                    <button type="button" class="btn btn-outline-primary">Outline</button>
-                    <button type="button" class="btn btn-secondary">Secondary</button>
-                    <button type="button" class="btn btn-link">Link</button>
-                    <button type="button" class="btn btn-primary" disabled>Disabled</button>
-                </div>
-
-                <div class="row g-3">
-                    <div class="col-md-4">
-                        <label for="demo-input" class="form-label">Textfeld</label>
-                        <input type="text" class="form-control" id="demo-input" placeholder="Platzhalter">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="demo-select" class="form-label">Auswahl</label>
-                        <select class="form-select" id="demo-select">
-                            <option selected>Option 1</option>
-                            <option>Option 2</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4 d-flex align-items-end">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="demo-check" checked>
-                            <label class="form-check-label" for="demo-check">Checkbox</label>
                         </div>
                     </div>
                 </div>

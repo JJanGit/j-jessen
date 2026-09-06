@@ -46,12 +46,16 @@
     width: 2.5rem;
     height: 2.5rem;
 }
-/* first logo of a new category, adds to the row gap */
+/* same look for the one outside a logo-row, minus the link underline */
+a.logo {
+    text-decoration: none;
+}
+/* break/space for new categories */
 .logo-break {
     position: relative;
     margin-left: 1.5rem;
 }
-/* divider sits in the middle of that gap, half its offset is the row gap */
+/* divider between categories */
 .logo-break::before {
     content: "";
     position: absolute;
@@ -72,9 +76,14 @@
 .logo-bootstrap { --logo-color: #7952b3; }
 .logo-jquery { --logo-color: #0769ad; }
 .logo-chartjs { --logo-color: #ff6384; }
+.logo-sqlite { --logo-color: #003b57; }
+.logo-git { --logo-color: #f05032; }
+.logo-github { --logo-color: #181717; }
 /* change some colors for dark mode */
 [data-bs-theme="dark"] .logo-css { --logo-color: #9864cb; }
 [data-bs-theme="dark"] .logo-pascal { --logo-color: var(--bs-emphasis-color); }
+[data-bs-theme="dark"] .logo-github { --logo-color: var(--bs-emphasis-color); }
+[data-bs-theme="dark"] .logo-sqlite { --logo-color: #0f80cc; }
 
 .logo:hover {
     color: var(--logo-color, var(--bs-body-color));
@@ -86,8 +95,8 @@
         transition: color 0.2s ease, transform 0.2s ease;
     }
 
-    /* lifts the svg, not the li, anime.js owns the transform on ".reveal" elements */
-    .logo:hover svg {
+    /* lifts the svg in a row, not the li, anime.js owns the transform on ".reveal" elements */
+    .logo-row .logo:hover svg {
         transform: translateY(-4px);
     }
 }
