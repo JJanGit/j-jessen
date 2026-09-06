@@ -100,3 +100,95 @@ a.logo {
         transform: translateY(-4px);
     }
 }
+
+
+/* ---------- projects ---------- */
+
+/* images behind cards ("--shot"), filter and opacity come per card */
+.card-shot {
+    --shot-filter: grayscale(1);
+    --shot-filter-hover: grayscale(0);
+    --shot-opacity: 0.16;
+    --shot-opacity-hover: 0.4;
+    isolation: isolate;
+}
+.card-shot::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: var(--shot);
+    background-repeat: no-repeat;
+    background-position: right -1rem bottom -1rem;
+    background-size: auto 95%;
+    filter: var(--shot-filter);
+    opacity: var(--shot-opacity);
+    /* fades towards the text so it stays readable */
+    -webkit-mask-image: linear-gradient(to right, transparent 20%, #000 90%);
+    mask-image: linear-gradient(to right, transparent 20%, #000 90%);
+}
+.card-shot:hover::before {
+    filter: var(--shot-filter-hover);
+    opacity: var(--shot-opacity-hover);
+}
+/* change opacity for darkmode */
+[data-bs-theme="dark"] .card-shot {
+    --shot-opacity: 0.12;
+    --shot-opacity-hover: 0.32;
+}
+
+/* for screenshots, so they fill the entire card */
+.shot-fill::before {
+    background-position: center top;
+    background-size: cover;
+    -webkit-mask-image: linear-gradient(200deg, transparent 25%, #000 100%);
+    mask-image: linear-gradient(200deg, transparent 25%, #000 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card-shot::before {
+        transition: opacity 0.3s ease, filter 0.3s ease;
+    }
+}
+
+.shot-portfolio {
+    --shot: url("/res/favicon.svg");
+}
+.shot-quizmon {
+    --shot: url("/res/shot-quizmon.webp");
+    /* flipped, so the dark area sinks into the light card and the text becomes the ink */
+    --shot-filter: grayscale(1) invert(1);
+    --shot-filter-hover: grayscale(1) invert(1) contrast(1.15);
+    --shot-opacity: 0.35;
+    --shot-opacity-hover: 0.55;
+}
+/* on a dark card it works unflipped, the bright text carries it */
+[data-bs-theme="dark"] .shot-quizmon {
+    --shot-filter: grayscale(1);
+    --shot-filter-hover: grayscale(0);
+    --shot-opacity: 0.3;
+    --shot-opacity-hover: 0.55;
+}
+
+/* work in progress stripes */
+.card-wip {
+    isolation: isolate;
+}
+.card-wip::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: repeating-linear-gradient(45deg, var(--bs-warning) 0 0.5rem, var(--bs-warning-border-subtle) 0.5rem 1rem);
+    opacity: 0.16;
+    /* stripes take the left side, they fade out where the shot starts */
+    -webkit-mask-image: linear-gradient(to right, #000 25%, transparent 60%);
+    mask-image: linear-gradient(to right, #000 25%, transparent 60%);
+}
+/* the shot gives up the left side in return, so the two do not overlap */
+.card-wip.shot-fill::before {
+    -webkit-mask-image: linear-gradient(to right, transparent 40%, #000 75%);
+    mask-image: linear-gradient(to right, transparent 40%, #000 75%);
+}
